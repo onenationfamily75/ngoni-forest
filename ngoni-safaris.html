@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Ngoni Safaris Uganda | Gorilla Trekking | Uganda & Africa Safaris</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --green:#1b4332;
+  --green-mid:#2d6a4f;
+  --green-light:#40916c;
+  --green-pale:#d8f3dc;
+  --gold:#d4a017;
+  --gold-light:#f0c040;
+  --orange:#e07b39;
+  --cream:#fdfaf4;
+  --warm:#f5efe6;
+  --dark:#111c14;
+  --text:#2c2c2c;
+  --mid:#6b7280;
+  --border:#e5e7eb;
+  --wa:#25D366;
+  --serif:'Merriweather',Georgia,serif;
+  --sans:'Inter',sans-serif;
+}
+body{font-family:var(--sans);background:var(--cream);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button{cursor:pointer;font-family:var(--sans)}
+ul{list-style:none}
+
+/* ─── TOPBAR ─── */
+.topbar{background:var(--dark);color:#ccc;font-size:.78rem;padding:.5rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.topbar a{color:var(--gold-light);transition:.15s}
+.topbar a:hover{color:#fff}
+.topbar-left,.topbar-right{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.social-links{display:flex;gap:.9rem}
+.social-links a{color:#aaa;font-size:.82rem;transition:.15s}
+.social-links a:hover{color:var(--gold-light)}
+
+/* ─── HEADER ─── */
+header{background:#fff;border-bottom:2px solid var(--border);position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(0,0,0,.07)}
+.header-inner{max-width:1300px;margin:0 auto;padding:.85rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.logo-wrap{display:flex;align-items:center;gap:.9rem}
+.logo-img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid var(--green-light)}
+.logo-text{font-family:var(--serif);font-size:1.22rem;font-weight:700;color:var(--green);line-height:1.2}
+.logo-text span{display:block;font-size:.72rem;font-weight:400;color:var(--mid);font-family:var(--sans);letter-spacing:.06em;text-transform:uppercase}
+.header-ctas{display:flex;align-items:center;gap:.8rem;flex-shrink:0}
+.btn-wa{background:var(--wa);color:#fff;padding:.6rem 1.2rem;border-radius:30px;font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:.45rem;transition:.2s;border:none;white-space:nowrap}
+.btn-wa:hover{background:#1ebe5d;transform:translateY(-1px)}
+.btn-quote{background:var(--green);color:#fff;padding:.6rem 1.2rem;border-radius:30px;font-size:.82rem;font-weight:600;transition:.2s;border:none;white-space:nowrap}
+.btn-quote:hover{background:var(--green-mid)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.6rem;color:var(--green)}
+
+/* ─── NAV ─── */
+nav{background:var(--green);position:relative;z-index:299}
+.nav-inner{max-width:1300px;margin:0 auto;padding:0 2rem;display:flex;align-items:stretch}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:.3rem;padding:.85rem 1.1rem;color:rgba(255,255,255,.88);font-size:.82rem;font-weight:500;letter-spacing:.03em;white-space:nowrap;transition:.15s;border-bottom:3px solid transparent}
+.nav-link:hover,.nav-link.active{color:#fff;border-bottom-color:var(--gold-light)}
+.nav-link .arrow{font-size:.65rem;opacity:.7}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:280px;border-radius:0 0 10px 10px;box-shadow:0 12px 36px rgba(0,0,0,.14);z-index:400;border-top:3px solid var(--gold)}
+.nav-item:hover .dropdown{display:block}
+.dropdown a{display:block;padding:.7rem 1.2rem;font-size:.82rem;color:var(--text);border-bottom:1px solid #f0f0f0;transition:.12s}
+.dropdown a:last-child{border-bottom:none}
+.dropdown a:hover{background:var(--green-pale);color:var(--green);padding-left:1.6rem}
+
+/* ─── HERO ─── */
+.hero{position:relative;height:88vh;min-height:560px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-slides{position:absolute;inset:0;z-index:0}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-size:cover;background-position:center}
+.hero-slide.active{opacity:1}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,28,18,.45) 0%,rgba(10,28,18,.65) 60%,rgba(10,28,18,.85) 100%);z-index:1}
+.hero-content{position:relative;z-index:2;text-align:center;color:#fff;padding:2rem;max-width:860px}
+.hero-eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);font-weight:600;margin-bottom:1rem;display:inline-flex;align-items:center;gap:.6rem}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:28px;height:1.5px;background:var(--gold)}
+.hero h1{font-family:var(--serif);font-size:3.6rem;font-weight:700;line-height:1.1;margin-bottom:1rem}
+.hero h1 em{color:var(--gold-light);font-style:italic}
+.hero p{font-size:1.08rem;opacity:.88;max-width:620px;margin:0 auto 2rem;font-weight:300}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-hero-primary{background:var(--gold);color:var(--dark);padding:.85rem 2rem;border-radius:6px;font-weight:700;font-size:.95rem;transition:.2s;border:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn-hero-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-hero-outline{background:transparent;color:#fff;padding:.85rem 2rem;border-radius:6px;font-weight:600;font-size:.95rem;border:2px solid rgba(255,255,255,.5);transition:.2s}
+.btn-hero-outline:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.hero-dots{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:.5rem}
+.hero-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.4);border:none;cursor:pointer;transition:.2s}
+.hero-dot.active{background:var(--gold);width:26px;border-radius:5px}
+
+/* ─── SEARCH BAR ─── */
+.search-bar{background:#fff;border-bottom:1px solid var(--border);padding:1.2rem 2rem;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.search-inner{max-width:1100px;margin:0 auto;display:flex;gap:.8rem;align-items:flex-end;flex-wrap:wrap}
+.search-group{display:flex;flex-direction:column;gap:.3rem;flex:1;min-width:160px}
+.search-group label{font-size:.72rem;font-weight:600;color:var(--mid);letter-spacing:.06em;text-transform:uppercase}
+.search-group select,.search-group input{padding:.65rem .9rem;border:1.5px solid var(--border);border-radius:7px;font-size:.85rem;font-family:var(--sans);color:var(--text);background:#fff;outline:none;transition:.2s}
+.search-group select:focus,.search-group input:focus{border-color:var(--green-light)}
+.btn-search{background:var(--green);color:#fff;padding:.68rem 1.8rem;border-radius:7px;font-size:.88rem;font-weight:700;border:none;white-space:nowrap;transition:.2s;display:flex;align-items:center;gap:.45rem;align-self:flex-end}
+.btn-search:hover{background:var(--green-mid)}
+
+/* ─── SECTION COMMONS ─── */
+.section{padding:4rem 2rem}
+.section-alt{padding:4rem 2rem;background:var(--warm)}
+.section-green{padding:4rem 2rem;background:var(--green);color:#fff}
+.container{max-width:1300px;margin:0 auto}
+.sec-tag{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-light);margin-bottom:.4rem;display:flex;align-items:center;gap:.6rem}
+.sec-tag::after{content:'';flex:1;height:1px;background:var(--green-pale);max-width:80px}
+.sec-tag.light{color:var(--gold-light)}
+.sec-tag.light::after{background:rgba(255,255,255,.2)}
+.sec-title{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--green);line-height:1.2;margin-bottom:.5rem}
+.sec-title.white{color:#fff}
+.sec-sub{font-size:.9rem;color:var(--mid);max-width:640px;line-height:1.7;margin-bottom:2.5rem}
+.sec-sub.light{color:rgba(255,255,255,.75)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
+.view-all{font-size:.82rem;color:var(--green-mid);font-weight:600;border-bottom:1px dashed var(--green-mid);transition:.15s;white-space:nowrap}
+.view-all:hover{color:var(--green)}
+
+/* ─── DESTINATION CARDS ─── */
+.dest-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.dest-card{border-radius:14px;overflow:hidden;position:relative;aspect-ratio:.75;cursor:pointer;transition:.3s}
+.dest-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.2)}
+.dest-card img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.dest-card:hover img{transform:scale(1.07)}
+.dest-overlay{position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(10,28,18,.82) 100%)}
+.dest-body{position:absolute;bottom:0;left:0;right:0;padding:1.2rem}
+.dest-count{font-size:.72rem;font-weight:600;letter-spacing:.08em;color:var(--gold-light);text-transform:uppercase;margin-bottom:.3rem}
+.dest-name{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:.4rem}
+.dest-arrow{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;color:rgba(255,255,255,.75);transition:.2s}
+.dest-card:hover .dest-arrow{color:var(--gold-light);gap:.6rem}
+
+/* ─── TOUR CARDS ─── */
+.tours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.tour-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.07);transition:.3s;display:flex;flex-direction:column;border:1px solid var(--border)}
+.tour-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.12)}
+.tour-img{position:relative;height:210px;overflow:hidden}
+.tour-img img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.tour-card:hover .tour-img img{transform:scale(1.06)}
+.tour-dest-tag{position:absolute;top:12px;left:12px;background:var(--green);color:#fff;font-size:.68rem;font-weight:700;padding:.28rem .7rem;border-radius:20px;letter-spacing:.04em;text-transform:uppercase}
+.tour-days-tag{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--dark);font-size:.7rem;font-weight:800;padding:.28rem .7rem;border-radius:20px}
+.tour-body{padding:1.3rem;flex:1;display:flex;flex-direction:column}
+.tour-cats{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.7rem}
+.tour-cat{font-size:.67rem;font-weight:600;color:var(--green-light);background:var(--green-pale);padding:.18rem .55rem;border-radius:20px;letter-spacing:.04em}
+.tour-title{font-family:var(--serif);font-size:1.02rem;font-weight:700;color:var(--dark);line-height:1.35;margin-bottom:.6rem;flex:1}
+.tour-meta{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.tour-meta-item{display:flex;align-items:center;gap:.35rem;font-size:.78rem;color:var(--mid)}
+.tour-meta-item .ico{font-size:.9rem}
+.tour-actions{display:flex;gap:.6rem;margin-top:auto}
+.btn-details{flex:1;background:var(--green-pale);color:var(--green);border:none;padding:.65rem;border-radius:7px;font-size:.8rem;font-weight:600;transition:.2s}
+.btn-details:hover{background:var(--green);color:#fff}
+.btn-book-wa{flex:1;background:var(--wa);color:#fff;border:none;padding:.65rem;border-radius:7px;font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:.4rem;transition:.2s}
+.btn-book-wa:hover{background:#1ebe5d}
+
+/* ─── WHY US ─── */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.why-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:2rem 1.5rem;text-align:center;transition:.25s}
+.why-card:hover{background:rgba(255,255,255,.1);border-color:var(--gold-light);transform:translateY(-4px)}
+.why-icon{font-size:2.4rem;margin-bottom:1rem}
+.why-card h4{font-family:var(--serif);font-size:1.05rem;color:var(--gold-light);margin-bottom:.6rem}
+.why-card p{font-size:.82rem;color:rgba(255,255,255,.72);line-height:1.6}
+
+/* ─── STATS ─── */
+.stats-strip{background:var(--gold);padding:2.5rem 2rem}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+.stat-val{font-family:var(--serif);font-size:2.8rem;font-weight:700;color:var(--green);line-height:1;margin-bottom:.3rem}
+.stat-lbl{font-size:.8rem;font-weight:600;color:var(--dark);letter-spacing:.05em;text-transform:uppercase}
+
+/* ─── TRAVEL ADVICE ─── */
+.advice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.advice-card{background:#fff;border-radius:12px;border:1px solid var(--border);padding:1.4rem;transition:.25s;cursor:pointer;text-align:center}
+.advice-card:hover{border-color:var(--green-light);box-shadow:0 8px 24px rgba(0,0,0,.08);transform:translateY(-3px)}
+.advice-icon{font-size:2rem;margin-bottom:.7rem}
+.advice-card h4{font-size:.9rem;font-weight:700;color:var(--green);margin-bottom:.4rem}
+.advice-card p{font-size:.78rem;color:var(--mid);line-height:1.5}
+
+/* ─── TESTIMONIALS ─── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.testi-card{background:#fff;border-radius:14px;padding:1.8rem;border:1px solid var(--border);box-shadow:0 4px 14px rgba(0,0,0,.05);transition:.25s}
+.testi-card:hover{box-shadow:0 10px 28px rgba(0,0,0,.1);transform:translateY(-3px)}
+.testi-stars{color:var(--gold);font-size:1rem;letter-spacing:.1em;margin-bottom:.9rem}
+.testi-text{font-family:var(--serif);font-size:.9rem;font-style:italic;color:#444;line-height:1.7;margin-bottom:1.2rem}
+.testi-author{display:flex;align-items:center;gap:.8rem}
+.testi-avatar{width:42px;height:42px;border-radius:50%;background:var(--green-pale);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green);font-size:1.1rem;flex-shrink:0}
+.testi-name{font-weight:700;font-size:.88rem;color:var(--dark)}
+.testi-loc{font-size:.75rem;color:var(--mid)}
+
+/* ─── BOOKING MODAL ─── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;justify-content:center;align-items:center;padding:1rem}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:18px;max-width:580px;width:100%;max-height:92vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.25)}
+.modal-head{background:var(--green);color:#fff;padding:1.6rem 2rem;border-radius:18px 18px 0 0;display:flex;justify-content:space-between;align-items:flex-start}
+.modal-head h3{font-family:var(--serif);font-size:1.3rem}
+.modal-head p{font-size:.8rem;opacity:.75;margin-top:.2rem}
+.modal-close{background:rgba(255,255,255,.15);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:1.2rem;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:.2s}
+.modal-close:hover{background:rgba(255,255,255,.3)}
+.modal-body{padding:2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.8rem;font-weight:600;color:var(--text);margin-bottom:.4rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.72rem 1rem;border:1.5px solid var(--border);border-radius:8px;font-size:.88rem;font-family:var(--sans);color:var(--text);outline:none;transition:.2s;background:#fff}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green-light);box-shadow:0 0 0 3px rgba(64,145,108,.1)}
+.form-group textarea{resize:vertical;min-height:90px}
+.modal-summary{background:var(--warm);border-radius:10px;padding:1.2rem;margin-bottom:1.2rem;border:1px solid #e5d9c8}
+.modal-summary h4{font-weight:700;color:var(--green);margin-bottom:.6rem;font-size:.9rem}
+.summary-row{display:flex;justify-content:space-between;font-size:.82rem;padding:.25rem 0;border-bottom:1px dashed #ddd}
+.summary-row:last-child{border-bottom:none;font-weight:700;color:var(--green);font-size:.9rem;margin-top:.3rem}
+.btn-confirm-wa{width:100%;background:var(--wa);color:#fff;border:none;padding:1rem;border-radius:10px;font-size:1rem;font-weight:800;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:.2s;box-shadow:0 4px 14px rgba(37,211,102,.35)}
+.btn-confirm-wa:hover{background:#1ebe5d;transform:translateY(-2px)}
+.btn-confirm-wa:disabled{background:#ccc;cursor:not-allowed;box-shadow:none;transform:none}
+
+/* ─── NEWSLETTER ─── */
+.newsletter{background:linear-gradient(135deg,var(--green),var(--green-mid));padding:3.5rem 2rem;text-align:center}
+.newsletter h2{font-family:var(--serif);font-size:2rem;color:#fff;margin-bottom:.6rem}
+.newsletter p{color:rgba(255,255,255,.78);max-width:500px;margin:0 auto 1.8rem;font-size:.9rem}
+.newsletter-form{display:flex;max-width:480px;margin:0 auto;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.newsletter-form input{flex:1;min-width:240px;padding:.8rem 1.2rem;border-radius:8px;border:none;font-size:.9rem;font-family:var(--sans);outline:none}
+.newsletter-form button{background:var(--gold);color:var(--dark);padding:.8rem 1.6rem;border-radius:8px;border:none;font-weight:700;font-size:.88rem;transition:.2s}
+.newsletter-form button:hover{background:var(--gold-light)}
+
+/* ─── WA FLOAT ─── */
+.wa-float{position:fixed;bottom:24px;right:24px;background:var(--wa);color:#fff;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 4px 20px rgba(37,211,102,.5);z-index:500;animation:pulse 2.2s infinite;text-decoration:none}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.wa-tooltip{position:absolute;right:74px;background:var(--dark);color:#fff;white-space:nowrap;padding:.45rem .9rem;border-radius:6px;font-size:.78rem;font-weight:600;pointer-events:none;opacity:0;transition:.2s}
+.wa-float:hover .wa-tooltip{opacity:1}
+
+/* ─── FOOTER ─── */
+footer{background:var(--dark);color:#fff;padding:4rem 2rem 2rem}
+.footer-inner{max-width:1300px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-logo{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:.7rem}
+.footer-logo span{color:var(--gold-light)}
+.footer-desc{color:#9ca3af;font-size:.84rem;line-height:1.7;max-width:280px;margin-bottom:1.2rem}
+.footer-social{display:flex;gap:.7rem}
+.footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:.2s;color:#ccc}
+.footer-social a:hover{background:var(--gold);color:var(--dark)}
+.footer-col h4{font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.2rem}
+.footer-col a{display:block;color:#9ca3af;font-size:.84rem;margin-bottom:.55rem;transition:.15s}
+.footer-col a:hover{color:#fff;padding-left:.3rem}
+.footer-contact-item{display:flex;align-items:flex-start;gap:.6rem;margin-bottom:.8rem;font-size:.84rem;color:#9ca3af}
+.footer-contact-item .ico{font-size:1rem;flex-shrink:0;margin-top:.1rem}
+.footer-bottom{border-top:1px solid #1f2937;padding-top:1.8rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.78rem;color:#6b7280}
+.footer-bottom a{color:#9ca3af}
+.footer-bottom a:hover{color:#fff}
+
+/* ─── TOAST ─── */
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(40px);background:var(--dark);color:#fff;padding:.75rem 1.6rem;border-radius:30px;font-size:.85rem;font-weight:500;z-index:2000;transition:.3s;opacity:0;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1050px){
+  .dest-grid{grid-template-columns:repeat(2,1fr)}
+  .tours-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .advice-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:700px){
+  .hero h1{font-size:2.3rem}
+  .dest-grid{grid-template-columns:1fr 1fr}
+  .tours-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .advice-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  nav .nav-inner{display:none}
+  .menu-toggle{display:block}
+  .header-ctas .btn-quote{display:none}
+  .form-row{grid-template-columns:1fr}
+  .search-inner{flex-direction:column}
+  .topbar{justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── TOPBAR ─── -->
+<div class="topbar">
+  <div class="topbar-left">
+
+  </div>
+  <div class="topbar-right">
+    <div class="social-links">
+      <a href="https://www.facebook.com/ngonisafarisuganda" target="_blank">📘 Facebook</a>
+      <a href="https://twitter.com/NgoniUganda" target="_blank">🐦 Twitter</a>
+      <a href="https://www.instagram.com/ngonisafaris/" target="_blank">📸 Instagram</a>
+      <a href="https://www.youtube.com/channel/UCO8SREsXAHp0andJ1jVftmg" target="_blank">▶️ YouTube</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── HEADER ─── -->
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <img class="logo-img" src="https://ngonisafarisuganda.com/wp-content/uploads/2016/04/cropped-cropped-gorillas-in-uganda-270x270.jpg" alt="Ngoni Safaris" onerror="this.style.display='none'"/>
+      <div class="logo-text">
+        Ngoni Safaris Uganda
+        <span>Africa's Premier Safari Experience</span>
+      </div>
+    </div>
+    <div class="header-ctas">
+      <button class="btn-wa" onclick="openBooking(null)">💬 WhatsApp Us</button>
+      <button class="btn-quote" onclick="openBooking(null)">Get Free Quote</button>
+      <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ─── NAVIGATION ─── -->
+<nav id="mainNav">
+  <div class="nav-inner" id="navInner">
+    <div class="nav-item">
+      <a href="#" class="nav-link active">HOME</a>
+    </div>
+    <div class="nav-item">
+      <a href="#about" class="nav-link">ABOUT US <span class="arrow">▾</span></a>
+      <div class="dropdown">
+        <a href="#about">About Ngoni Safaris</a>
+        <a href="#about">Our Team</a>
+        <a href="#why">Why Choose Us</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#tours" class="nav-link">UGANDA TOURS <span class="arrow">▾</span></a>
+      <div class="dropdown">
+        <a href="#tours">3 Days Gorilla Trekking</a>
+        <a href="#tours">7-Day Murchison Falls & Gorillas</a>
+        <a href="#tours">8-Day Gorillas, Chimps & Big 5</a>
+        <a href="#tours">10-Day Uganda Wildlife Highlights</a>
+        <a href="#tours">13-Day Gorillas, Wildlife & Chimps</a>
+        <a href="#tours">15-Day Gorilla & Chimps Trekking</a>
+        <a href="#tours">18-Day All Uganda National Parks</a>
+        <a href="#tours">3-Days Murchison Falls & Big 5</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#destinations" class="nav-link">DESTINATIONS <span class="arrow">▾</span></a>
+      <div class="dropdown">
+        <a href="#destinations">🇺🇬 Uganda Safaris</a>
+        <a href="#destinations">🇷🇼 Rwanda Safaris</a>
+        <a href="#destinations">🇰🇪 Kenya Safaris</a>
+        <a href="#destinations">🇹🇿 Tanzania Safaris</a>
+        <a href="#destinations">🏝 Zanzibar</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#advice" class="nav-link">TRAVEL ADVICE <span class="arrow">▾</span></a>
+      <div class="dropdown">
+        <a href="#advice">Visa Requirements</a>
+        <a href="#advice">Travel Insurance</a>
+        <a href="#advice">What to Pack</a>
+        <a href="#advice">Getting Around Uganda</a>
+        <a href="#advice">Changing Money</a>
+        <a href="#advice">Vaccinations Required</a>
+        <a href="#advice">Health & Emergencies</a>
+        <a href="#advice">Terms & Conditions</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#contact" class="nav-link">CONTACT US</a>
+    </div>
+    <div class="nav-item">
+      <a href="#" class="nav-link" style="color:var(--gold-light);font-weight:700" onclick="openBooking(null)">GET QUOTE</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<div class="hero">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active" style="background-image:url('https://ngonisafarisuganda.com/wp-content/uploads/2019/09/ugandasafaris1.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('https://ngonisafarisuganda.com/wp-content/uploads/2022/03/golden-monkey-in-rwanda.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('https://ngonisafarisuganda.com/wp-content/uploads/2022/03/masai-mara1.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&q=80')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Uganda · Rwanda · Kenya · Tanzania</div>
+    <h1>Come Face to Face<br/>with <em>Africa's Wild</em></h1>
+    <p>Gorilla trekking, chimpanzee tracking, Big Five game drives and nature safaris across East Africa's most spectacular national parks.</p>
+    <div class="hero-actions">
+      <button class="btn-hero-primary" onclick="openBooking(null)">🦍 Book Your Safari</button>
+      <a href="#tours" class="btn-hero-outline">View All Tours →</a>
+    </div>
+  </div>
+  <div class="hero-dots" id="heroDots"></div>
+</div>
+
+<!-- ─── SEARCH BAR ─── -->
+<div class="search-bar">
+  <div class="search-inner">
+    <div class="search-group">
+      <label>Destination</label>
+      <select id="sDest">
+        <option value="">Select destination</option>
+        <option>Uganda Safaris</option>
+        <option>Rwanda Safaris</option>
+        <option>Kenya Safaris</option>
+        <option>Tanzania Safaris</option>
+        <option>Zanzibar</option>
+      </select>
+    </div>
+    <div class="search-group">
+      <label>Category</label>
+      <select id="sCat">
+        <option value="">Select category</option>
+        <option>Gorilla Trekking</option>
+        <option>Chimpanzee Tracking</option>
+        <option>Big 5 Safari</option>
+        <option>Wildlife & Nature</option>
+        <option>Mountain Hiking</option>
+        <option>Private Experiences</option>
+      </select>
+    </div>
+    <div class="search-group">
+      <label>Duration (days)</label>
+      <input type="number" id="sDays" placeholder="e.g. 7" min="1" max="30"/>
+    </div>
+    <button class="btn-search" onclick="handleSearch()">🔍 Search Tours</button>
+  </div>
+</div>
+
+<!-- ─── POPULAR DESTINATIONS ─── -->
+<section class="section" id="destinations">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-tag">Must Visit</div>
+        <div class="sec-title">Popular Destinations</div>
+      </div>
+      <a href="#tours" class="view-all">View all tours →</a>
+    </div>
+    <div class="dest-grid">
+      <div class="dest-card" onclick="filterTours('uganda')">
+        <img src="https://ngonisafarisuganda.com/wp-content/uploads/2019/09/ugandasafaris1-555x400.jpg" alt="Uganda Safaris" onerror="this.src='https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80'"/>
+        <div class="dest-overlay"></div>
+        <div class="dest-body">
+          <div class="dest-count">31 Tour Packages</div>
+          <div class="dest-name">Uganda Safaris</div>
+          <div class="dest-arrow">Explore <span>→</span></div>
+        </div>
+      </div>
+      <div class="dest-card" onclick="filterTours('rwanda')">
+        <img src="https://ngonisafarisuganda.com/wp-content/uploads/2022/03/golden-monkey-in-rwanda.jpg" alt="Rwanda Safaris" onerror="this.src='https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80'"/>
+        <div class="dest-overlay"></div>
+        <div class="dest-body">
+          <div class="dest-count">8 Tour Packages</div>
+          <div class="dest-name">Rwanda Safaris</div>
+          <div class="dest-arrow">Explore <span>→</span></div>
+        </div>
+      </div>
+      <div class="dest-card" onclick="filterTours('kenya')">
+        <img src="https://ngonisafarisuganda.com/wp-content/uploads/2022/03/masai-mara1.jpg" alt="Kenya Safaris" onerror="this.src='https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=600&q=80'"/>
+        <div class="dest-overlay"></div>
+        <div class="dest-body">
+          <div class="dest-count">4 Tour Packages</div>
+          <div class="dest-name">Kenya Safaris</div>
+          <div class="dest-arrow">Explore <span>→</span></div>
+        </div>
+      </div>
+      <div class="dest-card" onclick="filterTours('tanzania')">
+        <img src="https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=600&q=80" alt="Tanzania Safaris"/>
+        <div class="dest-overlay"></div>
+        <div class="dest-body">
+          <div class="dest-count">6 Tour Packages</div>
+          <div class="dest-name">Tanzania Safaris</div>
+          <div class="dest-arrow">Explore <span>→</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TOURS ─── -->
+<section class="section-alt" id="tours">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-tag">Handcrafted Itineraries</div>
+        <div class="sec-title">Our Safari Packages</div>
+        <p class="sec-sub">From gorilla trekking in Bwindi to Big Five game drives — every tour is expertly designed for unforgettable memories.</p>
+      </div>
+    </div>
+    <!-- Filter pills -->
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.8rem" id="filterPills">
+      <button class="tour-cat" style="padding:.45rem 1rem;font-size:.8rem;cursor:pointer;border:none" onclick="filterTours('all')" id="pill-all">All Tours</button>
+      <button class="tour-cat" style="padding:.45rem 1rem;font-size:.8rem;cursor:pointer;border:none" onclick="filterTours('uganda')" id="pill-uganda">🇺🇬 Uganda</button>
+      <button class="tour-cat" style="padding:.45rem 1rem;font-size:.8rem;cursor:pointer;border:none" onclick="filterTours('rwanda')" id="pill-rwanda">🇷🇼 Rwanda</button>
+      <button class="tour-cat" style="padding:.45rem 1rem;font-size:.8rem;cursor:pointer;border:none" onclick="filterTours('kenya')" id="pill-kenya">🇰🇪 Kenya</button>
+      <button class="tour-cat" style="padding:.45rem 1rem;font-size:.8rem;cursor:pointer;border:none" onclick="filterTours('tanzania')" id="pill-tanzania">🇹🇿 Tanzania</button>
+    </div>
+    <div class="tours-grid" id="toursGrid"></div>
+  </div>
+</section>
+
+<!-- ─── STATS ─── -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div><div class="stat-val">15+</div><div class="stat-lbl">Years Experience</div></div>
+    <div><div class="stat-val">5,000+</div><div class="stat-lbl">Happy Travellers</div></div>
+    <div><div class="stat-val">53+</div><div class="stat-lbl">Tour Packages</div></div>
+    <div><div class="stat-val">4</div><div class="stat-lbl">Countries Covered</div></div>
+  </div>
+</div>
+
+<!-- ─── WHY US ─── -->
+<section class="section-green" id="why">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="sec-tag light" style="justify-content:center">Our Promise</div>
+      <div class="sec-title white" style="text-align:center">Why Choose Ngoni Safaris?</div>
+      <p class="sec-sub light" style="text-align:center;margin:0 auto">We craft personalised safari experiences that go beyond the ordinary, connecting you with Africa's raw, authentic wildlife and culture.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🦍</div>
+        <h4>Expert Guides</h4>
+        <p>Our professional, licensed guides know every trail, every animal, and every hidden gem across Uganda, Rwanda, Kenya and Tanzania.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛡️</div>
+        <h4>Safe & Reliable</h4>
+        <p>Your safety is our top priority. We operate fully licensed, insured vehicles and maintain the highest standards on all our tours.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌿</div>
+        <h4>Eco-Friendly Safaris</h4>
+        <p>We are committed to sustainable, responsible tourism that preserves Africa's precious ecosystems for future generations.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✈️</div>
+        <h4>Tailor-Made Tours</h4>
+        <p>Every itinerary is crafted to match your budget, travel style, and wishlist — from luxury lodges to budget-friendly camping.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <h4>Best Value Prices</h4>
+        <p>We guarantee competitive pricing with no hidden charges. Get the best rates for gorilla permits, accommodation and transport.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📞</div>
+        <h4>24/7 Support</h4>
+        <p>Our team is available around the clock via WhatsApp, phone and email to assist you before, during, and after your safari.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏆</div>
+        <h4>Award-Winning Service</h4>
+        <p>Recognised across East Africa for excellence in safari tourism and exceptional customer satisfaction ratings.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <h4>Community Focused</h4>
+        <p>We invest in local communities, employ local guides, and support conservation projects across our destinations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="section" id="about">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center" id="aboutGrid">
+      <div>
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80" alt="Ngoni Safaris" style="width:100%;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.14)"/>
+      </div>
+      <div>
+        <div class="sec-tag">About Us</div>
+        <div class="sec-title">Uganda's Trusted Safari Specialists</div>
+        <p style="color:#555;line-height:1.8;margin-bottom:1rem;font-size:.92rem">Ngoni Safaris Uganda is a premier tour operator offering unforgettable gorilla trekking, wildlife safaris, and nature experiences across East Africa. Our mission is to deliver high-quality, sustainable travel that satisfies our customers while respecting the social, cultural, and environmental reality of Africa.</p>
+        <p style="color:#555;line-height:1.8;margin-bottom:1.5rem;font-size:.92rem">With over a decade of experience, our expert team — fluent in multiple languages — crafts personalised itineraries that connect travellers with the real Africa: from the silverback gorillas of Bwindi Impenetrable Forest to the savannah herds of Queen Elizabeth National Park.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem">
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:var(--green);font-weight:600"><span>✅</span> Licensed & Registered</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:var(--green);font-weight:600"><span>✅</span> Professional Guides</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:var(--green);font-weight:600"><span>✅</span> Tailor-Made Tours</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:var(--green);font-weight:600"><span>✅</span> Gorilla Permit Experts</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:var(--green);font-weight:600"><span>✅</span> Eco-Friendly Travel</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:var(--green);font-weight:600"><span>✅</span> 24/7 WhatsApp Support</div>
+        </div>
+        <button class="btn-hero-primary" style="margin-top:1.8rem;font-size:.88rem" onclick="openBooking(null)">📱 WhatsApp Us Today</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRAVEL ADVICE ─── -->
+<section class="section-alt" id="advice">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div class="sec-tag" style="justify-content:center">Plan Your Trip</div>
+      <div class="sec-title" style="text-align:center">Travel Advice</div>
+    </div>
+    <div class="advice-grid">
+      <div class="advice-card"><div class="advice-icon">🛂</div><h4>Visa Requirements</h4><p>All you need to know about visas and entry requirements for Uganda and East Africa.</p></div>
+      <div class="advice-card"><div class="advice-icon">🛡️</div><h4>Travel Insurance</h4><p>Why travel insurance is essential for your safari and what coverage you need.</p></div>
+      <div class="advice-card"><div class="advice-icon">🎒</div><h4>What to Pack</h4><p>The complete packing list for a Uganda safari — from gorilla trekking to game drives.</p></div>
+      <div class="advice-card"><div class="advice-icon">🚙</div><h4>Getting Around</h4><p>How to travel between Uganda's national parks safely and comfortably.</p></div>
+      <div class="advice-card"><div class="advice-icon">💵</div><h4>Changing Money</h4><p>Tips on currency exchange, ATMs, and using money in Uganda and Rwanda.</p></div>
+      <div class="advice-card"><div class="advice-icon">💉</div><h4>Vaccinations</h4><p>Recommended vaccinations and health precautions before travelling to Uganda.</p></div>
+      <div class="advice-card"><div class="advice-icon">🏨</div><h4>At Your Lodge</h4><p>What to expect at safari lodges and camps in Uganda's national parks.</p></div>
+      <div class="advice-card"><div class="advice-icon">✈️</div><h4>Travelling to Uganda</h4><p>Flights, entry points, and what to expect on arrival at Entebbe Airport.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div class="sec-tag" style="justify-content:center">Happy Travellers</div>
+      <div class="sec-title" style="text-align:center">What Our Guests Say</div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"An absolutely life-changing experience! Coming face to face with the gorillas in Bwindi was something I will never forget. Ngoni Safaris made every detail seamless and magical."</div>
+        <div class="testi-author"><div class="testi-avatar">S</div><div><div class="testi-name">Sarah M.</div><div class="testi-loc">🇬🇧 United Kingdom</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"The 10-day Uganda wildlife tour exceeded every expectation. Our guide was knowledgeable, friendly and so passionate about conservation. Truly the best safari company in Uganda."</div>
+        <div class="testi-author"><div class="testi-avatar">J</div><div><div class="testi-name">James T.</div><div class="testi-loc">🇺🇸 United States</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"We did the 7-day Murchison Falls and gorilla trek — absolutely incredible. The team's organisation, passion and local knowledge made it the trip of a lifetime. Highly recommended!"</div>
+        <div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Anna K.</div><div class="testi-loc">🇩🇪 Germany</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NEWSLETTER ─── -->
+<div class="newsletter">
+  <h2>Get Your Free Safari Quote</h2>
+  <p>Tell us your dream safari and we'll craft a personalised itinerary with the best prices. No commitment required.</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="Your email address"/>
+    <button onclick="openBooking(null)">Get Free Quote →</button>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Ngoni <span>Safaris</span> Uganda</div>
+        <p class="footer-desc">Kenya's Premier safari company offering gorilla trekking, chimpanzee tracking, Big Five safaris and wildlife tours across East Africa since 2010.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/ngonisafarisuganda" target="_blank">📘</a>
+          <a href="https://twitter.com/NgoniUganda" target="_blank">🐦</a>
+          <a href="https://www.instagram.com/ngonisafaris/" target="_blank">📸</a>
+          <a href="https://www.youtube.com/channel/UCO8SREsXAHp0andJ1jVftmg" target="_blank">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Uganda Tours</h4>
+        <a href="#">3 Days Gorilla Trekking</a>
+        <a href="#">7-Day Murchison Falls & Gorillas</a>
+        <a href="#">8-Day Gorillas, Chimps & Big 5</a>
+        <a href="#">10-Day Uganda Wildlife</a>
+        <a href="#">13-Day Gorillas & Wildlife</a>
+        <a href="#">15-Day Gorilla & Chimps Trek</a>
+        <a href="#">18-Day All Uganda Parks</a>
+      </div>
+      <div class="footer-col">
+        <h4>Destinations</h4>
+        <a href="#">🇺🇬 Uganda Safaris</a>
+        <a href="#">🇷🇼 Rwanda Safaris</a>
+        <a href="#">🇰🇪 Kenya Safaris</a>
+        <a href="#">🇹🇿 Tanzania Safaris</a>
+        <a href="#">🏝 Zanzibar</a>
+        <a href="#">Rwanda & Uganda Combined</a>
+      </div>
+      <div class="footer-col" id="contact">
+        <h4>Contact Us</h4>
+
+        <div class="footer-contact-item"><span class="ico">💬</span><span><a href="https://wa.me/254103761442" target="_blank" style="color:var(--wa)">WhatsApp: +254103761442</a></span></div>
+
+        <div class="footer-contact-item"><span class="ico">📍</span><span>Kampala, Uganda</span></div>
+        <div class="footer-contact-item"><span class="ico">🕐</span><span>Mon – Sat: 8:00am – 6:00pm</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Ngoni Safaris Uganda. All rights reserved.</span>
+      <div style="display:flex;gap:1rem">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── WA FLOAT ─── -->
+<a href="https://wa.me/254103761442?text=Hello%20Ngoni%20Safaris!%20I%20would%20like%20to%20enquire%20about%20your%20safari%20packages%20and%20get%20a%20free%20quote.%20Please%20assist%20me.%20Thank%20you!" target="_blank" class="wa-float" title="Chat on WhatsApp">
+  💬
+  <span class="wa-tooltip">Chat with us!</span>
+</a>
+
+<!-- ─── BOOKING MODAL ─── -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <div>
+        <h3>Book Your Safari</h3>
+        <p id="modalTourName">Fill in your details and we'll confirm via WhatsApp</p>
+      </div>
+      <button class="modal-close" onclick="closeBooking()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-summary" id="modalSummary" style="display:none">
+        <h4>Tour Summary</h4>
+        <div class="summary-row"><span>Tour</span><span id="sumTour">-</span></div>
+        <div class="summary-row"><span>Duration</span><span id="sumDays">-</span></div>
+        <div class="summary-row"><span>Destination</span><span id="sumDest">-</span></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Full Name *</label><input type="text" id="fName" placeholder="John Doe"/></div>
+        <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" id="fPhone" placeholder="+256 7XX XXX XXX"/></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" id="fEmail" placeholder="john@example.com"/></div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Tour Package *</label>
+          <select id="fTour">
+            <option value="">Select a tour</option>
+            <option>3 Days Gorilla Trekking in Uganda</option>
+            <option>7-Day Murchison Falls, Chimps & Gorilla Trekking</option>
+            <option>8-Day Gorillas, Chimps and Big 5 Game Drives</option>
+            <option>10-Day Highlight of Uganda Wildlife and Nature</option>
+            <option>13-Day Gorillas, Wildlife, Big Five and Chimps</option>
+            <option>15-Day Gorilla and Chimps Trekking, Big 5 Safari</option>
+            <option>18-Day Safari Exploring All Uganda National Parks</option>
+            <option>3-Days Murchison Falls & Big 5 Sighting</option>
+            <option>9-Day Gorilla Trekking Best of Rwanda</option>
+            <option>3-Day Rwanda Gorilla Safari</option>
+            <option>4-Day Gorilla Trekking & Golden Monkeys (Rwanda)</option>
+            <option>16-Day Rwanda & Uganda Gorilla Trekking & Big Five</option>
+            <option>Kenya Safari – Masai Mara</option>
+            <option>Tanzania Safari – Serengeti & Ngorongoro</option>
+            <option>Custom / Other (describe below)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Travel Date *</label>
+          <input type="date" id="fDate"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Number of People</label>
+          <input type="number" id="fPeople" placeholder="2" min="1" value="2"/>
+        </div>
+        <div class="form-group">
+          <label>Accommodation Type</label>
+          <select id="fAccomm">
+            <option>Budget</option>
+            <option>Mid-Range</option>
+            <option>Luxury</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Special Requests / Message</label>
+        <textarea id="fMessage" placeholder="Tell us about your dream safari, any special requirements, dietary needs, etc."></textarea>
+      </div>
+      <button class="btn-confirm-wa" id="confirmBtn" onclick="confirmWhatsApp()">
+        💬 Confirm Booking via WhatsApp
+      </button>
+      <p style="text-align:center;color:#9ca3af;font-size:.75rem;margin-top:.9rem">Your enquiry will be sent to our team on WhatsApp <strong>+254103761442</strong> for instant confirmation. No payment required at this stage.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TOAST ─── -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── TOUR DATA ───
+const TOURS = [
+  {id:1, title:"3 Days Gorilla Trekking in Uganda", days:3, dest:"uganda", cats:["Gorilla Trekking","Bwindi"], price:"From $700", img:"https://ngonisafarisuganda.com/wp-content/uploads/2019/09/ugandasafaris1-555x400.jpg", highlights:["Bwindi Impenetrable Forest","Gorilla permit included","Professional guide","Accommodation included"], url:"https://ngonisafarisuganda.com/package/gorillatours/"},
+  {id:2, title:"7-Day Murchison Falls, Chimps & Gorilla Trekking", days:7, dest:"uganda", cats:["Gorilla Trekking","Chimpanzee","Wildlife"], price:"From $1,800", img:"https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80", highlights:["Murchison Falls NP","Kibale Forest Chimps","Bwindi Gorillas","Game drives"], url:"https://ngonisafarisuganda.com/package/7-day-murchison-falls-chimps-gorilla-trekking/"},
+  {id:3, title:"8-Day Experience Gorillas, Chimps and Big 5 Game Drives", days:8, dest:"uganda", cats:["Gorilla Trekking","Big 5","Chimpanzee"], price:"From $2,200", img:"https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80", highlights:["Queen Elizabeth NP","Kibale Chimps","Bwindi Gorillas","Boat cruise"], url:"https://ngonisafarisuganda.com/package/gorilla-trekking-safaris/"},
+  {id:4, title:"10-Day Highlight of Uganda Wildlife and Nature", days:10, dest:"uganda", cats:["Wildlife","Nature","Big 5"], price:"From $2,800", img:"https://images.unsplash.com/photo-1533228100845-08145b01de14?w=600&q=80", highlights:["Kidepo Valley NP","Murchison Falls","Queen Elizabeth NP","Bwindi Forest"], url:"https://ngonisafarisuganda.com/package/10-day-highlight-of-uganda-wildlife-and-its-nature/"},
+  {id:5, title:"13-Day Gorillas, Wildlife, Big Five and Chimps Experience", days:13, dest:"uganda", cats:["Gorilla Trekking","Big 5","Chimpanzee"], price:"From $3,500", img:"https://images.unsplash.com/photo-1612178537253-bccd437b730e?w=600&q=80", highlights:["All major Uganda parks","Gorilla & chimp permits","Game drives","Boat cruises"], url:"https://ngonisafarisuganda.com/package/13-day-gorillas-wildlife-big-five-and-chimps-experience/"},
+  {id:6, title:"15-Day Gorilla & Chimps Trekking, Big 5 Safari", days:15, dest:"uganda", cats:["Gorilla Trekking","Big 5","Chimpanzee"], price:"From $4,200", img:"https://images.unsplash.com/photo-1570555329200-97e28d4b7e3d?w=600&q=80", highlights:["Comprehensive Uganda tour","Multiple gorilla encounters","Semuliki NP","Lake Mburo"], url:"https://ngonisafarisuganda.com/package/15-day-gorilla-and-chimps-trekking-big-5-and-nature-sighting-safari/"},
+  {id:7, title:"18-Day Safari Exploring Almost All Uganda National Parks", days:18, dest:"uganda", cats:["Wildlife","Big 5","Gorilla Trekking"], price:"From $5,500", img:"https://images.unsplash.com/photo-1508197994547-8e6a741e9e7e?w=600&q=80", highlights:["Kidepo to Lake Mburo","All major parks","Charter flight option","Ultimate Uganda experience"], url:"https://ngonisafarisuganda.com/package/18-day-safari-exploring-almost-all-uganda-national-parks/"},
+  {id:8, title:"3-Days Murchison Falls Vacation Including Big 5 Sighting!", days:3, dest:"uganda", cats:["Big 5","Wildlife"], price:"From $900", img:"https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=600&q=80", highlights:["Murchison Falls NP","Big 5 game drive","Nile boat cruise","Delta walk"], url:"https://ngonisafarisuganda.com/package/3-days-murchison-falls-vacation-including-big-5-sighting/"},
+  {id:9, title:"9-Day Gorilla Trekking Best of Rwanda", days:9, dest:"rwanda", cats:["Gorilla Trekking","Rwanda"], price:"From $3,200", img:"https://ngonisafarisuganda.com/wp-content/uploads/2022/03/golden-monkey-in-rwanda.jpg", highlights:["Volcanoes NP","Gorilla trekking","Akagera NP","Nyungwe Forest"], url:"https://ngonisafarisuganda.com/package/gorilla-treks-in-rwanda/"},
+  {id:10, title:"3-Day Rwanda Gorilla Safari", days:3, dest:"rwanda", cats:["Gorilla Trekking","Rwanda"], price:"From $1,500", img:"https://images.unsplash.com/photo-1527871369852-eb58c7f2e4e7?w=600&q=80", highlights:["Volcanoes National Park","Mountain gorillas","Kigali city tour","Scenic landscapes"], url:"https://ngonisafarisuganda.com/package/gorilla-tours-in-rwanda/"},
+  {id:11, title:"4-Day Gorilla Trekking & Golden Monkeys — Rwanda", days:4, dest:"rwanda", cats:["Gorilla Trekking","Golden Monkeys"], price:"From $1,900", img:"https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&q=80", highlights:["Volcanoes NP gorillas","Golden monkey tracking","Twin Lakes","Kigali memorial"], url:"https://ngonisafarisuganda.com/package/meteora-day-trip-from-athens-by-train/"},
+  {id:12, title:"16-Day Rwanda & Uganda Gorilla Trekking & Big Five", days:16, dest:"rwanda", cats:["Gorilla Trekking","Big 5","Cross-border"], price:"From $5,000", img:"https://images.unsplash.com/photo-1613483187990-6c4ca14ee8cf?w=600&q=80", highlights:["Rwanda + Uganda combined","Gorillas in both countries","Big Five game drives","Chimp trekking"], url:"https://ngonisafarisuganda.com/package/16-day-rwanda-and-ugandas-gorilla-trekking-big-five/"},
+  {id:13, title:"Kenya Safari — Masai Mara Wildlife & Migration", days:5, dest:"kenya", cats:["Big 5","Masai Mara","Wildlife"], price:"From $1,400", img:"https://ngonisafarisuganda.com/wp-content/uploads/2022/03/masai-mara1.jpg", highlights:["Masai Mara Game Reserve","Great Migration viewing","Big 5 sightings","Luxury tented camps"], url:"https://ngonisafarisuganda.com/destination/kenya-safaris/"},
+  {id:14, title:"Tanzania Safari — Serengeti & Ngorongoro Crater", days:7, dest:"tanzania", cats:["Big 5","Serengeti","Wildlife"], price:"From $2,400", img:"https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=600&q=80", highlights:["Serengeti NP","Ngorongoro Crater","Wildebeest migration","Zanzibar beach option"], url:"https://ngonisafarisuganda.com/destination/tanzania-safaris/"},
+];
+
+let activeDest = 'all';
+let currentTour = null;
+
+// ─── RENDER TOURS ───
+function renderTours(filter){
+  const grid = document.getElementById('toursGrid');
+  const list = filter === 'all' ? TOURS : TOURS.filter(t => t.dest === filter);
+  grid.innerHTML = list.map(t => `
+    <div class="tour-card">
+      <div class="tour-img">
+        <img src="${t.img}" alt="${t.title}" onerror="this.src='https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80'" loading="lazy"/>
+        <span class="tour-dest-tag">${t.dest.charAt(0).toUpperCase()+t.dest.slice(1)}</span>
+        <span class="tour-days-tag">${t.days} Days</span>
+      </div>
+      <div class="tour-body">
+        <div class="tour-cats">${t.cats.map(c=>`<span class="tour-cat">${c}</span>`).join('')}</div>
+        <div class="tour-title">${t.title}</div>
+        <div class="tour-meta">
+          <div class="tour-meta-item"><span class="ico">📅</span> ${t.days} Days</div>
+          <div class="tour-meta-item"><span class="ico">💰</span> ${t.price}</div>
+          <div class="tour-meta-item"><span class="ico">🌍</span> ${t.dest.charAt(0).toUpperCase()+t.dest.slice(1)}</div>
+        </div>
+        <ul style="font-size:.78rem;color:#555;margin-bottom:1rem;padding-left:.2rem">
+          ${t.highlights.map(h=>`<li style="display:flex;align-items:center;gap:.4rem;padding:.2rem 0"><span style="color:var(--green-light)">✓</span>${h}</li>`).join('')}
+        </ul>
+        <div class="tour-actions">
+          <button class="btn-details" onclick="window.open('${t.url}','_blank')">View Details</button>
+          <button class="btn-book-wa" onclick="openBooking(${t.id})">💬 Book via WhatsApp</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function filterTours(dest){
+  activeDest = dest;
+  renderTours(dest);
+  // update pills
+  document.querySelectorAll('#filterPills button').forEach(b=>{
+    b.style.background = 'rgba(64,145,108,.1)';
+    b.style.color = 'var(--green-light)';
+  });
+  const pill = document.getElementById('pill-'+dest);
+  if(pill){ pill.style.background = 'var(--green)'; pill.style.color = '#fff'; }
+  document.getElementById('tours').scrollIntoView({behavior:'smooth'});
+}
+
+// ─── HERO SLIDESHOW ───
+function initHero(){
+  const slides = document.querySelectorAll('.hero-slide');
+  const dotsEl = document.getElementById('heroDots');
+  let cur = 0;
+  slides.forEach((_,i)=>{
+    const d = document.createElement('button');
+    d.className = 'hero-dot' + (i===0?' active':'');
+    d.onclick = ()=>goSlide(i);
+    dotsEl.appendChild(d);
+  });
+  function goSlide(n){
+    slides[cur].classList.remove('active');
+    document.querySelectorAll('.hero-dot')[cur].classList.remove('active');
+    cur = n;
+    slides[cur].classList.add('active');
+    document.querySelectorAll('.hero-dot')[cur].classList.add('active');
+  }
+  setInterval(()=>goSlide((cur+1)%slides.length), 5000);
+}
+
+// ─── BOOKING MODAL ───
+const WA_NUMBER = '254103761442';
+
+function openBooking(tourId){
+  currentTour = tourId ? TOURS.find(t=>t.id===tourId) : null;
+  const summary = document.getElementById('modalSummary');
+  const overlay = document.getElementById('modalOverlay');
+
+  if(currentTour){
+    const dest = currentTour.dest.charAt(0).toUpperCase() + currentTour.dest.slice(1);
+    // Show tour summary card in modal
+    summary.style.display = 'block';
+    summary.innerHTML = `
+      <h4>📦 Selected Tour</h4>
+      <div class="summary-row"><span>Tour</span><span id="sumTour">${currentTour.title}</span></div>
+      <div class="summary-row"><span>Destination</span><span id="sumDest">${dest}</span></div>
+      <div class="summary-row"><span>Duration</span><span id="sumDays">${currentTour.days} Days</span></div>
+      <div class="summary-row" style="background:rgba(64,145,108,.08);padding:.5rem;border-radius:6px;margin-top:.4rem">
+        <span style="font-weight:700;color:var(--green)">💰 Price</span>
+        <span style="font-weight:800;color:var(--green);font-size:1rem">${currentTour.price}</span>
+      </div>`;
+    document.getElementById('modalTourName').textContent = currentTour.title;
+    // Pre-select the tour in the dropdown
+    const sel = document.getElementById('fTour');
+    for(let i=0; i<sel.options.length; i++){
+      if(sel.options[i].text.toLowerCase().includes(currentTour.title.toLowerCase().substring(0,20))){
+        sel.selectedIndex = i; break;
+      }
+    }
+  } else {
+    summary.style.display = 'none';
+    document.getElementById('modalTourName').textContent = 'Fill in your details — we\'ll confirm via WhatsApp';
+    document.getElementById('fTour').selectedIndex = 0;
+  }
+
+  // Clear previous inputs
+  document.getElementById('fName').value = '';
+  document.getElementById('fPhone').value = '';
+  document.getElementById('fEmail').value = '';
+  document.getElementById('fDate').value = '';
+  document.getElementById('fPeople').value = '2';
+  document.getElementById('fMessage').value = '';
+
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBooking(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e){
+  if(e.target.id === 'modalOverlay') closeBooking();
+}
+
+function confirmWhatsApp(){
+  const name   = document.getElementById('fName').value.trim();
+  const phone  = document.getElementById('fPhone').value.trim();
+  const email  = document.getElementById('fEmail').value.trim();
+  const tourSel= document.getElementById('fTour').value;
+  const date   = document.getElementById('fDate').value;
+  const people = document.getElementById('fPeople').value;
+  const accomm = document.getElementById('fAccomm').value;
+  const msg_ex = document.getElementById('fMessage').value.trim();
+
+  if(!name){ showToast('⚠️ Please enter your full name.'); return; }
+  if(!phone){ showToast('⚠️ Please enter your phone / WhatsApp number.'); return; }
+
+  // Use selected tour from modal or currentTour
+  const tour = currentTour || TOURS.find(t => t.title === tourSel);
+  const tourName  = tour ? tour.title  : (tourSel || 'General Enquiry');
+  const tourDays  = tour ? `${tour.days} Days` : '—';
+  const tourPrice = tour ? tour.price  : '—';
+  const tourDest  = tour ? (tour.dest.charAt(0).toUpperCase() + tour.dest.slice(1)) : '—';
+  const highlights= tour ? tour.highlights.map(h => `   • ${h}`).join('\n') : '';
+
+  const message =
+`🦍 *NGONI SAFARIS UGANDA — BOOKING ENQUIRY*
+
+━━━━━━━━━━━━━━━━━━━━━
+👤 *Name:* ${name}
+📞 *Phone/WhatsApp:* ${phone}${email ? `\n✉️ *Email:* ${email}` : ''}
+━━━━━━━━━━━━━━━━━━━━━
+🌍 *Destination:* ${tourDest}
+📦 *Tour Package:* ${tourName}
+📅 *Duration:* ${tourDays}
+💰 *Package Price:* ${tourPrice}
+━━━━━━━━━━━━━━━━━━━━━
+📅 *Travel Date:* ${date || 'Flexible / To be confirmed'}
+👥 *Number of Travellers:* ${people}
+🏨 *Accommodation Preference:* ${accomm}
+${highlights ? `\n✅ *Tour Highlights:*\n${highlights}` : ''}
+━━━━━━━━━━━━━━━━━━━━━
+${msg_ex ? `💬 *Special Requests / Message:*\n${msg_ex}\n━━━━━━━━━━━━━━━━━━━━━\n` : ''}
+Please confirm availability and send me a full detailed quote. Thank you!`;
+
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+  showToast('✅ Opening WhatsApp — your booking is being sent!');
+  closeBooking();
+}
+
+// ─── SEARCH ───
+function handleSearch(){
+  const dest = document.getElementById('sDest').value.toLowerCase().replace(' safaris','');
+  if(dest){ filterTours(dest); }
+  else{ filterTours('all'); }
+}
+
+// ─── MOBILE MENU ───
+function toggleMobileMenu(){
+  const nav = document.getElementById('navInner');
+  if(nav.style.display === 'flex'){
+    nav.style.display = '';
+  } else {
+    nav.style.display = 'flex';
+    nav.style.flexDirection = 'column';
+    nav.style.position = 'fixed';
+    nav.style.top = '0';
+    nav.style.left = '0';
+    nav.style.right = '0';
+    nav.style.bottom = '0';
+    nav.style.background = 'var(--green)';
+    nav.style.zIndex = '1000';
+    nav.style.padding = '4rem 2rem 2rem';
+    nav.style.overflowY = 'auto';
+  }
+}
+
+// ─── ABOUT GRID RESPONSIVE ───
+function fixAbout(){
+  const grid = document.getElementById('aboutGrid');
+  if(window.innerWidth < 700){
+    grid.style.gridTemplateColumns = '1fr';
+    grid.style.gap = '2rem';
+  } else {
+    grid.style.gridTemplateColumns = '1fr 1fr';
+    grid.style.gap = '4rem';
+  }
+}
+
+// ─── TOAST ───
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 3000);
+}
+
+// ─── INIT ───
+initHero();
+renderTours('all');
+fixAbout();
+window.addEventListener('resize', fixAbout);
+</script>
+</body>
+</html>

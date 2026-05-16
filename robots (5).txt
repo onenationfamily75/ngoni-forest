@@ -1,0 +1,25 @@
+# robots.txt for Ngoni Safaris Uganda
+# https://www.ngonisafarisuganda.com
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /wp-includes/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /?s=
+Disallow: /search
+
+# Allow important crawlable resources
+Allow: /wp-content/uploads/
+Allow: /wp-content/themes/
+Allow: /wp-content/plugins/
+
+# Crawl-delay for polite bots
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://www.ngonisafarisuganda.com/sitemap.xml
